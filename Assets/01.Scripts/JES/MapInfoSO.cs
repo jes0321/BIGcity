@@ -11,14 +11,11 @@ using UnityEngine.Tilemaps;
 public class MapInfoSO : ScriptableObject
 {
     private Tilemap _floorTilemap,_colliderTilemap;//플로어 타일맵, 콜라이더 타일맵
-    
     public void Initialize(Tilemap floorTilemap, Tilemap colliderTilemap)
     {
         _floorTilemap = floorTilemap;
         _colliderTilemap = colliderTilemap;
     }
-    
-    
     
     public Vector3Int GetTilePosFromWorld(Vector3 from) => _floorTilemap.WorldToCell(from); //월드 좌표로 바닥 타일맵의 좌표를 반환
     public Vector3 GetCellCenterToWorld(Vector3Int cellCenter) => _floorTilemap.GetCellCenterWorld(cellCenter); //타일맵의 중심의 좌표를 월드좌표로 변환
