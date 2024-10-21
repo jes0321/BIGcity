@@ -10,11 +10,12 @@ using UnityEngine.Tilemaps;
 [CreateAssetMenu(menuName = "SO/Map/MapInfo")]
 public class MapInfoSO : ScriptableObject
 {
-    private Tilemap _floorTilemap,_colliderTilemap;//플로어 타일맵, 콜라이더 타일맵
-    public void Initialize(Tilemap floorTilemap, Tilemap colliderTilemap)
+    private Tilemap _floorTilemap,_buildingTilemap,_treeTilemap;//플로어 타일맵, 콜라이더 타일맵
+    public void Initialize(Tilemap floorTilemap, Tilemap buildingTilemap,Tilemap treeTilemap)
     {
         _floorTilemap = floorTilemap;
-        _colliderTilemap = colliderTilemap;
+        _buildingTilemap = buildingTilemap;
+        _treeTilemap = treeTilemap;
     }
     
     public Vector3Int GetTilePosFromWorld(Vector3 from) => _floorTilemap.WorldToCell(from); //월드 좌표로 바닥 타일맵의 좌표를 반환
